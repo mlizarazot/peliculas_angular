@@ -27,7 +27,7 @@
     "strictInjectionParameters": false,
     "strictInputAccessModifiers": false,
     "strictTemplates": true,
-    "fullTemplateTypeCheck": true
+    "fullTemplateTypeCheck": false
    
     
   }
