@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoPeliculasComponent } from './peliculas/listado-pelculas/listado-peliculas.component';
@@ -28,7 +28,7 @@ import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-pe
 import { FormularioActoresComponent } from './actores/formulario-actores/formulario-actores.component';
 import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
-import { MarkdownModule } from 'ngx-markdown';
+
 
 
 @NgModule({
@@ -54,7 +54,7 @@ import { MarkdownModule } from 'ngx-markdown';
     FiltroPeliculasComponent,
     FormularioActoresComponent,
     InputImgComponent,
-    InputMarkdownComponent     
+    InputMarkdownComponent,     
   ],
   imports: [
     BrowserModule,
