@@ -68,6 +68,7 @@ import { MapaComponent } from './utilidades/mapa/mapa.component';
     MaterialModule,
     ReactiveFormsModule,
     LeafletModule,
+    //LeafletMarkerClusterModule,
     MarkdownModule.forRoot()
   ],
   providers: [],

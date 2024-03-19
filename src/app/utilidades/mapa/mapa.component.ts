@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { latLng, tileLayer } from 'leaflet';
+import { LeafletMouseEvent, Marker, latLng, marker, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-mapa',
@@ -21,7 +21,17 @@ export class MapaComponent implements OnInit {
       }),
     ],
     zoom: 14,
-    center: latLng(18.482849960148176, -69.93999481201173),
+    center: latLng(4.64061477323, -74.076808553),
   };
+
+  capas: Marker<any>[] = [];
+
+  manejarClick(event: LeafletMouseEvent){
+    const latitud = event.latlng.lat;
+    const longitud = event.latlng.lng;
+    console.log({latitud, longitud});
+    this.capas.push(marker([latitud, longitud]));
+
+  }
 
 }
