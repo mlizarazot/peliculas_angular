@@ -9,10 +9,7 @@ import { actorCreacionDTO, actorDTO } from '../actor';
   styleUrls: ['./formulario-actores.component.css']
 })
 export class FormularioActoresComponent implements OnInit {
-archivoSeleccionado($event: File) {
-throw new Error('Method not implemented.');
-}
-//submit: any;
+
   
   constructor(private formBuilder: FormBuilder) { }
 
@@ -22,7 +19,7 @@ throw new Error('Method not implemented.');
   modelo!: actorDTO;
 
   @Output()
-  submit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
+  OnSubmit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -33,14 +30,26 @@ throw new Error('Method not implemented.');
 
       },
     ],
-      fechaNacimiento: ''  
+      fechaNacimiento: '',  
+      foto:'',
+      biografia:''
     });
     if(this.modelo !==undefined){
       this.form.patchValue(this.modelo)
     }
   }
+
+  archivoSeleccionado(file){
+    this.form.get('foto').setValue(file);
+  }
+
+  cambioMarkdown(texto){
+    this.form.get('biografia').setValue(texto);
+
+  }
+
   onSubmit(){
-    this.submit.emit(this.form.value);
+    this.OnSubmit.emit(this.form.value);
 
   }
 
